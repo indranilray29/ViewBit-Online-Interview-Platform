@@ -60,114 +60,141 @@ export const QUICK_ACTIONS = [
 
 export const CODING_QUESTIONS: CodeQuestion[] = [
   {
-    id: "two-sum",
-    title: "Two Sum",
+    id: "fibonacci-sequence",
+    title: "Fibonacci Sequence",
     description:
-      "Given an array of integers `nums` and an integer `target`, return indices of the two numbers in the array such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.",
+      "Given an integer `n`, return the `n`th Fibonacci number.\n\nThe Fibonacci sequence is defined as:\n\nF(0) = 0, F(1) = 1\nF(n) = F(n - 1) + F(n - 2) for n > 1",
     examples: [
       {
-        input: "nums = [2,7,11,15], target = 9",
-        output: "[0,1]",
-        explanation: "Because nums[0] + nums[1] == 9, we return [0, 1]",
+        input: "n = 2",
+        output: "1",
+        explanation: "F(2) = F(1) + F(0) = 1 + 0 = 1",
       },
       {
-        input: "nums = [3,2,4], target = 6",
-        output: "[1,2]",
+        input: "n = 5",
+        output: "5",
+        explanation: "F(5) = 5",
       },
     ],
     starterCode: {
-      javascript: `function twoSum(nums, target) {
+      javascript: `function fibonacci(n) {
   // Write your solution here
   
 }`,
-      python: `def two_sum(nums, target):
+      python: `def fibonacci(n):
     # Write your solution here
     pass`,
       java: `class Solution {
-    public int[] twoSum(int[] nums, int target) {
+    public int fibonacci(int n) {
         // Write your solution here
         
     }
 }`,
+      cpp: `class Solution {
+public:
+    int fibonacci(int n) {
+        // Write your solution here
+        
+    }
+};`,
     },
     constraints: [
-      "2 ≤ nums.length ≤ 104",
-      "-109 ≤ nums[i] ≤ 109",
-      "-109 ≤ target ≤ 109",
-      "Only one valid answer exists.",
+      "0 ≤ n ≤ 30",
     ],
   },
   {
-    id: "reverse-string",
-    title: "Reverse String",
+    id: "valid-parentheses",
+    title: "Valid Parentheses",
     description:
-      "Write a function that reverses a string. The input string is given as an array of characters `s`.\n\nYou must do this by modifying the input array in-place with O(1) extra memory.",
+      "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.\n\nAn input string is valid if:\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.",
     examples: [
       {
-        input: 's = ["h","e","l","l","o"]',
-        output: '["o","l","l","e","h"]',
-      },
-      {
-        input: 's = ["H","a","n","n","a","h"]',
-        output: '["h","a","n","n","a","H"]',
-      },
-    ],
-    starterCode: {
-      javascript: `function reverseString(s) {
-  // Write your solution here
-  
-}`,
-      python: `def reverse_string(s):
-    # Write your solution here
-    pass`,
-      java: `class Solution {
-    public void reverseString(char[] s) {
-        // Write your solution here
-        
-    }
-}`,
-    },
-  },
-  {
-    id: "palindrome-number",
-    title: "Palindrome Number",
-    description:
-      "Given an integer `x`, return `true` if `x` is a palindrome, and `false` otherwise.\n\nAn integer is a palindrome when it reads the same forward and backward.",
-    examples: [
-      {
-        input: "x = 121",
+        input: 's = "()"',
         output: "true",
-        explanation: "121 reads as 121 from left to right and from right to left.",
       },
       {
-        input: "x = -121",
+        input: 's = "([)]"',
         output: "false",
-        explanation:
-          "From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.",
       },
     ],
     starterCode: {
-      javascript: `function isPalindrome(x) {
+      javascript: `function isValid(s) {
   // Write your solution here
   
 }`,
-      python: `def is_palindrome(x):
+      python: `def is_valid(s):
     # Write your solution here
     pass`,
       java: `class Solution {
-    public boolean isPalindrome(int x) {
+    public boolean isValid(String s) {
         // Write your solution here
         
     }
 }`,
+      cpp: `class Solution {
+public:
+    bool isValid(string s) {
+        // Write your solution here
+        
+    }
+};`,
     },
+    constraints: [
+      "1 ≤ s.length ≤ 104",
+      "s consists of parentheses only '()[]{}'.",
+    ],
+  },
+  {
+    id: "merge-sorted-arrays",
+    title: "Merge Two Sorted Arrays",
+    description:
+      "You are given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively.\n\nMerge `nums2` into `nums1` as one sorted array. The final sorted array should not be returned by the function but instead stored inside the array `nums1`.",
+    examples: [
+      {
+        input: "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
+        output: "[1,2,2,3,5,6]",
+      },
+      {
+        input: "nums1 = [1], m = 1, nums2 = [], n = 0",
+        output: "[1]",
+      },
+    ],
+    starterCode: {
+      javascript: `function merge(nums1, m, nums2, n) {
+  // Write your solution here
+  
+}`,
+      python: `def merge(nums1, m, nums2, n):
+    # Write your solution here
+    pass`,
+      java: `class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        // Write your solution here
+        
+    }
+}`,
+      cpp: `class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        // Write your solution here
+        
+    }
+};`,
+    },
+    constraints: [
+      "nums1.length == m + n",
+      "nums2.length == n",
+      "-10^9 ≤ nums1[i], nums2[i] ≤ 10^9",
+    ],
   },
 ];
+
 
 export const LANGUAGES = [
   { id: "javascript", name: "JavaScript", icon: "/javascript.png" },
   { id: "python", name: "Python", icon: "/python.png" },
   { id: "java", name: "Java", icon: "/java.png" },
+  { id: "cpp", name: "C++", icon: "/cpp.png" },
 ] as const;
 
 export interface CodeQuestion {
@@ -183,7 +210,7 @@ export interface CodeQuestion {
     javascript: string;
     python: string;
     java: string;
-  };
+    cpp: string; };
   constraints?: string[];
 }
 
